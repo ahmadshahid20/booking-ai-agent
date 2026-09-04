@@ -4,7 +4,12 @@ import json
 import requests
 import os
 app = FastAPI()
-
+@app.get("/")
+def home():
+    return {
+        "status": "online",
+        "message": "Booking AI Agent Backend is running!"
+    }
 def get_connection():
    return psycopg2.connect(os.getenv("DATABASE_URL"))
 
