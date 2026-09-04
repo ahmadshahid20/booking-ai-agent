@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # FastAPI URL
-API_URL = "http://127.0.0.1:8000"
+API_URL = "https://booking-ai-agent-production.up.railway.app"
 
 st.set_page_config(
     page_title="Booking Dashboard",

@@ -147,17 +147,7 @@ async def cancel_booking(request: Request):
     """,
     (date, time, customer_name)
 )
-    conn = get_connection()
-    cursor = conn.cursor()
-
-    cursor.execute(
-        """
-        SELECT * FROM bookings
-        WHERE date = %s AND time = %s AND customer_name = %s
-        """,
-        (date, time, customer_name)
-    )
-
+   
     existing = cursor.fetchone()
 
     if not existing:
